@@ -8,20 +8,48 @@
     <div id="header">
         <h4>Code With ASCII Pets</h4>
     </div>
-    <div id="pet">
-        (\__/)<br>
-        ( •_•)<br>
-        / >🍪
+    <button onclick="startLesson()">Meet Bugsy</button>
+
+    <div id="lesson" style="display: none;">
+        <div id="pet">
+            (\__/)<br>
+            ( •_•)<br>
+            / >🍪
+        </div>
+        <p id="dialogue">Bugsy: Wanna learn about variables? :D</p>
+        <button onclick="sayYes()">Yes :)</button>
+        <button onclick="sayNo()">No :(</button>
     </div>
-    <p id="dialogue">Bugsy: Wanna learn about variables? :D</p>
-    <button onclick="sayYes()">Yes :)</button>
-    <button onclick="sayNo()">No :(</button>
+
+    <div id="examples" style="display: none;">
+        <h3>Example Time!</h3>
+        <p>Here's an example of a variable:</p>
+        <pre>
+            let petName = "Bugsy";
+            console.log(petName); // Output: Bugsy
+        </pre>
+        <p>This code creates a variable called <code>petName</code> and gives it the value <code>"Bugsy"</code>.</p>
+        <p>Try editing and running your own version below!</p>
+    </div>
 
     <div id="console-section" style="display: none;">
         <h3>Try it here!</h3>
         <textarea id="textbox" rows="4" cols="50">// Try writing the code here!</textarea><br>
         <button onclick="runCode()">Run!</button>
         <pre id="console-output">Output will appear here!</pre>
+    </div>
+
+    <div id="quiz" style="display: none;">
+        <h3>Quick Quiz!</h3>
+        <p>Which of the following correctly declares a variable in JavaScript?</p>
+        <form id="quiz-form">
+            <label><input type="radio" name="answer" value="a"> var name = Bugsy</label><br>
+            <label><input type="radio" name="answer" value="b"> variable name = "Bugsy";</label><br>
+            <label><input type="radio" name="answer" value="c"> let name = "Bugsy";</label><br>
+            <label><input type="radio" name="answer" value="d"> name: "Bugsy";</label><br><br>
+            <button type="button" onclick="checkAnswer()">Submit</button>
+        </form>
+        <p id="quiz-result"></p>
     </div>
     
     <script src="main.js"></script>
