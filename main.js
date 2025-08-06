@@ -1,3 +1,23 @@
+function typeWriter(text, elementId, delay = 30) {
+    const el = document.getElementById(elementId);
+    el.textContent = "";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, delay);
+        }
+    }
+    type();
+}
+
+function startLesson() {
+    document.querySelector("button[onclick='startLesson()']").style.display = "none";
+    document.getElementById("lesson").style.display = "block";
+    typeWriter("Bugsy: Wanna learn about variables? :D", "dialogue");
+}
+
 function sayYes(){
     document.getElementById("console-section").style.display = "block";
     document.getElementById("examples").style.display = "block";
