@@ -5,3 +5,15 @@ function sayYes(){
 function sayNo(){
     document.getElementById("dialogue").innerText="Awe okay, Bugsy sad 🍪🥲";
 }
+
+function runCode(){
+    const userCode = document.getElementById("textbox").value;
+    const output = document.getElementById("console-output");
+
+    try {
+        const result = eval(userCode);
+        output.textContent = result !== undefined ? result : "Oops! No output D:";
+    } catch (error) {
+        output.textContent = "Error: " + error.message;
+    }
+}
